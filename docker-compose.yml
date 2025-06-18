@@ -1,0 +1,58 @@
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always 
+    environment:
+      MYSQL_ROOT_PASSWORD:{$DB_PASSWORD}
+      MYSQL_DATABASE:{$DB_DATABASE}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - samed-tcp
+
+  backend:
+    build:
+      context: ./tcpBoliviaApi
+    container_name: backend
+    volumes:
+      - ./tcpBoliviaApi:/var/www/html
+      - ./tcpBoliviaApi/docker/php-conf/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+    environment:
+      DB_CONNECTION:{$DB_CONNECTION}
+      DB_HOST:{$DB_HOST}
+      DB_PORT:{$DB_PORT}
+      DB_DATABASE:{$DB_DATABASE}
+      DB_USERNAME:{$DB_USERNAME}
+      DB_PASSWORD:{$DB_PASSWORD}
+    command: php artisan serve --host=0.0.0.0 --port=8000
+    networks:
+      - samed-tcp
+
+  frontend:
+    build:
+      context: ./tcpBoliviaFrontend
+    container_name: frontend
+    expose:
+    - "3000"
+    volumes:
+    - ./tcpBoliviaFrontend:/app
+    - /app/node_modules
+    working_dir: /app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+    depends_on:
+      - backend
+    networks:
+      - samed-tcp
+
+volumes:
+  mysql-data:
+
+networks:
+  samed-tcp:

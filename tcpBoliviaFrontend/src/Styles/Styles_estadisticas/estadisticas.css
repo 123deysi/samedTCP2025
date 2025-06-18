@@ -1,0 +1,52 @@
+.card-container-estadisticas {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px; /* Reducir un poco el gap para un diseño más compacto */
+  flex-wrap: wrap; /* Asegura que las tarjetas se ajusten en pantallas pequeñas */
+  padding: 10px;
+}
+
+.card-estadisticas {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f5f5f5; /* Color de fondo más suave */
+  border-radius:12px; /* Bordes más redondeados para un diseño moderno */
+  text-align: center;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil y difusa */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px; /* Definir un ancho máximo */
+  margin: 10px; /* Añadir un margen entre las tarjetas */
+}
+
+.card-estadisticas:hover {
+  transform: translateY(-5px); /* Animación sutil al hacer hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar la sombra al hacer hover */
+}
+
+.card-header-estadisticas {
+  background-color:#892943;
+ /* background-color: #777; /* Color primario más oscuro para mayor contraste */
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: 100;
+  font-size: 16px; /* Tamaño de fuente más grande */
+  white-space: nowrap;
+}
+
+.card-body-estadisticas {
+  padding: 5px;
+  background-color: #e6ebec; /* Fondo blanco para mejor legibilidad */
+  color: #000000; /* Texto más oscuro para mejor contraste */
+  
+  font-size: 16px; /* Tamaño del número más grande para destacar */
+  font-weight: 500;
+}
+
+.card-body-estadisticas p {
+  margin: 5px 0 0; /* Espaciado entre el texto */
+  font-size: 14px; /* Texto adicional más pequeño */
+  color: #777; /* Color gris suave para el texto secundario */
+}

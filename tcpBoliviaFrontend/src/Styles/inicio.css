@@ -1,0 +1,53 @@
+.tarjetas-icon-style {
+  color: white;
+  font-size: 150px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.card-container .card {
+  width: 300px;
+  height: 350px;
+  animation: 1.5s fadeInUp;
+  transition: width 5ms, height 4ms;
+}
+.card-container .card:hover {
+  width: 320px;
+  height: 370px;
+}
+
+.card-container {
+  align-items: center;
+  height: 78.8vh;
+}
+
+.card-container .card:hover .tarjetas-icon-style {
+    color: lightgray;
+    transition: 0.9s;
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 720px) {
+
+    .card-container {
+        align-items: center;
+        height: auto;
+        padding: 2rem;
+      }
+
+      .card-container .card {
+        width: 250px;
+        height: 300px;
+      }
+}
+
+

@@ -1,0 +1,35 @@
+.boton-libro-de-codigo {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #007bff; /* Azul profesional */
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    opacity: 0.9; /* Sutil opacidad */
+  }
+  
+  .boton-libro-de-codigo:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-4px); /* Subir ligeramente el botón */
+    opacity: 1;
+  }
+  
+  .icono-descarga {
+    margin-right: 8px; /* Espaciado entre el ícono y el texto */
+    font-size: 20px; /* Tamaño del ícono */
+  }
+  
+  .boton-libro-de-codigo:focus {
+    outline: none; /* Eliminar el borde del foco */
+  }
+  

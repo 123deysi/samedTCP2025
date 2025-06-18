@@ -1,0 +1,85 @@
+/* Barra superior */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  background-color: #7B1E3A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1201;
+  width: 100%;
+}
+.main-content {
+  margin-top: 70px;  /* navbar fija */
+  margin-left: 250px; /* ancho estimado del sidebar */
+  padding: 20px;
+  box-sizing: border-box;
+  width: calc(100% - 250px); /* espacio restante */
+}
+.navbar-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.user-info,
+.logout-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.user-text,
+.logout-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+/* Drawer lateral */
+.sidebar-gradient {
+   background-color: #7B1E3A !important;
+  color: white;
+}
+
+.sidebar-toolbar {
+  background-color: #7B1E3A;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.sidebar-list-item {
+  color: white;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-list-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-icon {
+  color: white !important;
+}
+
+.white-text {
+  color: white;
+}

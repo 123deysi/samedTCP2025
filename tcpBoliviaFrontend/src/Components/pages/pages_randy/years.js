@@ -1,0 +1,2 @@
+export const years = [2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024];
+export const salas = ['Todos', 'Penal', 'Penal I', 'Penal II', 'Penal Liquidadora', 'Civil', 'Civil I', 'Civil II', 'Civil Liquidadora', 'Plena', 'Social', 'Social 1era', 'Social 2da', 'Social Liquidadora', 'Social 1era Liquidadora', 'Social 2da Liquidadora']

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+.slider{
+  border-radius: 1.5rem;
+  background-color: #DCDCDD;
+  margin: 2rem;
+  
+}
+
+.slide:not(:current){
+  display: none;
+}
+.current{
+  padding: 2rem;
+  display: grid;
+}
+
+.titulo-card {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1.3rem;
+  font-weight: bold;
+}
+.desc-card{
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  height: auto;
+  border-radius: 1.3rem;
+}
+.content{
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.prev{
+  position: absolute;
+  z-index: 999;
+  left: 2rem;
+  top: 60%;
+}
+
+.next{
+  position: absolute;
+  z-index: 999;
+  right: 2rem;
+  top: 60%;
+}
+
+.arrow {
+  cursor: pointer;
+  height: 1.4rem;
+  width: 1.4rem;
+}
+.arrow:hover {
+  color: #777;
+}
+
+#image-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#image-card img{
+  height: fit-content;
+}
+#grid-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 720px) {
+  
+  #grid-content{
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    order: -1;
+    padding: 0;
+  }
+  p{
+    font-size: smaller;
+  }
+
+  .slider{
+    margin: 1rem;
+  }
+  .current{
+    padding: 0;
+    margin: 0;
+  }
+  .titulo-card {
+    margin: 1rem;
+  }
+  .desc-card{
+    padding: 1rem;
+  }
+}

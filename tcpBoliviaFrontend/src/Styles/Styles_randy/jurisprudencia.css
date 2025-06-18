@@ -1,0 +1,98 @@
+:root {
+  --mainColor: #450920;
+  --secondaryColor: #fff;
+  --secondaryFontColor: #eaf8bf;
+  --blue: #20a8d8;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #f86c6b;
+  --orange: #f8cb00;
+  --yellow: #ffc107;
+  --green: #4dbd74;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #73818f;
+  --gray-dark: #2f353a;
+  --light-blue: #63c2de;
+  --primary: #20a8d8;
+  --secondary: #c8ced3;
+  --success: #4dbd74;
+  --info: #63c2de;
+  --warning: #ffc107;
+  --danger: #f86c6b;
+  --light: #f0f3f5;
+  --dark: #2f353a;
+}
+@keyframes fadeInY {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+.cards-container .card {
+  width: 300px;
+  height: auto;
+  animation: 1.5s fadeInY;
+  transition: width 5ms, height 4ms;
+}
+
+.bg-f86c6b{
+  background-color: #f86c6b;
+}
+
+.bg-ffc107{
+  background-color: #ffc107;
+}
+.bg-4dbd74{
+  background-color: #4dbd74;
+}
+
+#j-container-icons .icon-style {
+  font-size: 7rem;
+  color: rgba(255, 255, 255, .6) ;
+}
+
+.main {
+  width: 100%;
+  height: 78.8vh;
+}
+
+
+.card{
+  
+  width: 400px;
+  transition: width 10ms, height 6ms;
+}
+
+.card:hover{
+  transform: scale(1.1);
+  
+}
+.card:hover #j-container-icons .icon-style {
+  transition: 0.9s;
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 720px) {
+  .main{
+    height: auto;
+  }
+
+  .card{
+  height: auto;
+  width: auto;
+}
+
+#j-container-icons .icon-style {
+  font-size: 8rem;
+}
+
+}

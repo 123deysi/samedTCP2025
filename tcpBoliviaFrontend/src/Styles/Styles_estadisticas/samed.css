@@ -1,0 +1,84 @@
+.samed-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.samed-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.samed-logo {
+  width: 80px;
+  height: auto;
+}
+
+.samed-titles h1 {
+  font-size: 2.2rem;
+  color: #004080;
+  margin: 0;
+}
+
+.samed-titles h2 {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.samed-section {
+  margin-bottom: 30px;
+}
+
+.samed-section h3 {
+  font-size: 1.3rem;
+  color: #0077b6;
+  margin-bottom: 12px;
+}
+
+.samed-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.samed-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.samed-section li {
+  padding: 6px 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.samed-section li::before {
+  content: "✔️";
+  margin-right: 8px;
+  color: #0077b6;
+}
+
+.footer-logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  color: #003366;
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #007acc;
+}

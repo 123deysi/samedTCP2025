@@ -1,0 +1,145 @@
+div#analisis-materia {
+  .form-juris {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .subfrom-juris {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .years-col .card {
+    height: 80px;
+    width: 110px;
+    position: relative;
+  }
+
+  .salas-col .card {
+    height: 90px;
+    width: 120px;
+    position: relative;
+  }
+  .years-col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+    justify-content: start;
+    border-radius: 1rem;
+    /* border: 1px solid black; */
+  }
+  .magistrados-col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+    justify-content: start;
+    border-radius: 1rem;
+    /* border: 1px solid black; */
+  }
+  .magistrados-col .card {
+    height: 150px;
+    width: 200px;
+    position: relative;
+  }
+
+  .salas-col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+    border-radius: 1rem;
+  }
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    box-shadow: 7px 7px 15px rgba(2, 28, 53, 0.08);
+    cursor: pointer;
+    outline: none;
+  }
+  input[type="radio"]:before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    background-color: #f9fafd;
+    border: 1px solid #e2e6f3;
+    border-radius: 50%;
+    top: 35px;
+    right: 20px;
+  }
+  input[type="radio"]:after {
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 39.5px;
+    right: 24.5px;
+  }
+  input[type="radio"]:hover {
+    transform: scale(1.05);
+  }
+  input[type="radio"]:checked {
+    border: 3px solid #478bfb;
+  }
+  input[type="radio"]:checked:after {
+    background-color: #478bfb;
+  }
+  label {
+    position: absolute;
+    margin: 20px;
+    cursor: pointer;
+  }
+  h5 {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 20px 0;
+  }
+
+  @media (max-width: 1280px) {
+    .subfrom-juris {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(2, auto);
+    }
+    .salas-col .card {
+      height: 80px;
+      width: 100px;
+    }
+
+    .years-col {
+      justify-content: start;
+    }
+    .salas-col {
+      justify-content: start;
+    }
+    h5 {
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .form-juris {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+    }
+    .subfrom-juris {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+}

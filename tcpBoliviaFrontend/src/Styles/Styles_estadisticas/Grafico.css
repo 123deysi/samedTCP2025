@@ -1,0 +1,102 @@
+/* CONTENEDOR PARA ECHART - Altura 800px para el mapa */
+.container-grafico {
+  
+  
+  margin: 8px auto;
+  height: 550px;
+  max-width: 90%;
+}
+
+/* CONTENEDOR PARA GRÁFICO DE CASOS - Altura automática */
+.container-grafico-barras {
+  
+  margin: 8px auto;
+  height: auto; /* Altura automática para evitar espacios en blanco */
+  min-height: 400px; /* Altura mínima para mantener proporción */
+  max-width: 90%;
+  padding: 20px; /* Añadir padding interno */
+ 
+
+}
+.container-grafico {
+  margin-bottom: 20px;
+}
+
+
+/* Estilos para pantallas pequeñas (celulares) */
+@media screen and (max-width: 768px) {
+  .container-grafico,
+  .container-grafico-barras {
+    max-width: 100%;
+    
+    margin: 4px auto; /* Reducir márgenes en móviles */
+  }
+  
+  .container-grafico-barras {
+    min-height: 300px; /* Reducir altura mínima en móviles */
+    padding: 10px; /* Reducir padding en móviles */
+  }
+  
+  .container-grafico {
+    height: 600px; /* Reducir altura del mapa en móviles */
+    padding: 10px;
+  }
+}
+
+/* Ajusta la altura del gráfico para que se ajuste a la visualización */
+.container-grafico canvas,
+.container-grafico-barras canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+
+/* Asegurar que los gráficos dentro del contenedor ocupen el espacio adecuado */
+.container-grafico-barras > * {
+  height: 100%;
+  width: 100%;
+}
+
+.map-description {
+  margin-top: 20px;
+  /* Espacio entre el mapa y la descripción */
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #333;
+}
+
+.contenedor-grafico-mapa {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: aqua;
+  /* Permite que los elementos se ajusten en pantallas pequeñas */
+  justify-content: space-between;
+  /* Espacia los elementos */
+  align-items: flex-start;
+  /* Alinea los elementos verticalmente al inicio */
+  gap: 5px;
+  /* Espaciado entre el gráfico y el mapa */
+}
+
+.contenedor-grafico-mapa>div {
+  flex: 1;
+  /* Ambos elementos ocuparán el mismo espacio */
+  min-width: 45%;
+  /* Asegura que no sean más pequeños de un 45% en pantallas pequeñas */
+  max-width: 48%;
+  /* Asegura que no ocupen más del 48% en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+  .contenedor-grafico-mapa>div {
+    flex: 1 1 100%;
+    /* En pantallas pequeñas, ambos elementos ocupan el 100% */
+    max-width: 100%;
+    /* Asegura que ocupen todo el ancho */
+  }
+}

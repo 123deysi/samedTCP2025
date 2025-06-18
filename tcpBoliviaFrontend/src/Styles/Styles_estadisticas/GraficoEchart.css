@@ -1,0 +1,123 @@
+/* Contenedor principal de gráfico y mapa */
+.contenedor_GraficoCasos_Echart {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 98%;
+  height: 94vh;
+  gap: 20px;
+  margin: 0 auto;
+  
+}
+
+/* Elementos internos con altura completa */
+.grafico-casos-container,
+.echart-container {
+  flex: 1;
+  height: 100%;
+}
+
+/* Ajustes responsivos para tablets */
+@media (max-width: 768px) {
+  .contenedor_GraficoCasos_Echart {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .grafico-casos-container,
+  .echart-container {
+    height: 300px;
+  }
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 480px) {
+  .contenedor_GraficoCasos_Echart {
+    gap: 5px;
+  }
+
+  .grafico-casos-container,
+  .echart-container {
+    height: 250px;
+  }
+}
+
+/* Estilo visual del gráfico de casos */
+.grafico-casos-container {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(238, 90, 36, 0.05));
+  border-radius: 20px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 107, 107, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* Decoración de fondo */
+.grafico-casos-decoracion {
+  position: absolute;
+  bottom: -50%;
+  left: -20%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 36, 0.1));
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+/* Contenedor interno del gráfico */
+.grafico-casos-interno {
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor de estadísticas */
+.estadisticas-container {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decoración de fondo para estadísticas */
+.estadisticas-decoracion {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+/* Contenedor interno de estadísticas */
+.container-grafico,
+.estadisticas-interno {
+  margin-bottom: 1.5rem;
+}
+
+/* Ajustes responsive para textos de bienvenida */
+@media (max-width: 640px) {
+  .bienvenida h1 {
+    font-size: 1.1rem;
+  }
+
+  .bienvenida p {
+    font-size: 0.9rem;
+  }
+
+  .container-grafico,
+  .estadisticas-interno {
+   
+  border-top: none;
+  background-color: #fff;
+  margin-top: 0;
+  padding-top: 0;
+
+
+  }
+}

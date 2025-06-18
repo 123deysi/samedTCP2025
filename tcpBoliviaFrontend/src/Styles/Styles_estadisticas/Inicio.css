@@ -1,0 +1,267 @@
+.fondo_Dinamica {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.letra {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contenedor-principal {
+  
+  background: linear-gradient(130deg, rgb(117, 37, 59),rgb(181, 129, 129), rgb(117, 37, 59));
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(240, 163, 163, 0.1);
+  padding: 20px;
+}
+.container-grafico-barras,
+
+
+
+.contenedor-dinamico-cuadro {
+
+  overflow: hidden;
+  /* Evita que el contenido se salga del contenedor */
+  max-width: 100%;
+  /* Asegura que el contenedor no se extienda más allá del ancho de su padre */
+
+
+}
+
+.contenedor-dinamico {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columna {
+  flex: 1;
+  margin: 10px;
+}
+
+/**/
+.contenedor-opciones {
+  display: flex;
+  justify-content: space-between;
+  /* Alinea los botones a los extremos */
+  align-items: center;
+  /* Alinea verticalmente los botones */
+  margin-bottom: 3px;
+  /* Espaciado entre el título y los botones */
+  padding: 10px;
+  /* Añade un poco de padding alrededor */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  margin-top: 0px;
+}
+
+.iconos-white{
+  background: linear-gradient(90deg, #793446, #882943, #4c1e2a);
+ 
+  color: white;
+}
+
+.iconos-white:hover {
+  background: linear-gradient(90deg, #4c1e2a, #551b2b, #4c1e2a);
+  color: white;
+}
+
+
+.btn-explorar,
+.btn-retroceder {
+  background-color: transparent;
+  /* Fondo transparente */
+  border: 1px solid #A3A3A3;
+  /* Borde negro */
+  color: #000;
+  /* Color de texto negro */
+  font-size: 16px;
+  /* Tamaño de la fuente */
+  padding: 5px;
+  /* Espaciado interno del botón */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Icono de cursor de mano */
+  transition: background-color 0.3s ease;
+  /* Efecto de transición en hover */
+}
+
+.btn-explorar:hover,
+.btn-retroceder:hover {
+  background-color: #000000;
+  /* Fondo gris claro al hacer hover */
+}
+
+.icono-filtro,
+.icono-retroceder {
+  margin-right: 8px;
+  /* Espaciado entre el icono y el texto */
+}
+
+/* Contenedor centrado */
+.estadisticas-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Barra de navegación */
+.navbar2 {
+  background: rgba(255, 255, 255, 0.95);
+
+  
+  border-bottom: 1px solid rgba(8, 8, 8, 0.2);
+
+  
+  padding: 10px 7px;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Título */
+.navbar-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-icon1 {
+  background: linear-gradient(45deg, rgb(164, 88, 104), #8C2E47);
+  padding: 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-icon1 i {
+  color: white;
+  font-size: 20px; /* opcional, puedes ajustarlo */
+  background: linear-gradient(45deg, rgb(164, 88, 104), #8C2E47);
+}
+
+.navbar-title h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #a45868, #8C2E47);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Botones */
+.navbar-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-filter {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-filter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-back {
+  background: rgba(102, 126, 234, 0.1);
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  padding: 10px 18px;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .navbar {
+    
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .navbar-title {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navbar-buttons {
+    flex: 1 1 100%;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn-filter,
+  .btn-back {
+    flex: 1 1 auto;
+    min-width: 140px;
+    justify-content: center;
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  .navbar-title h1 {
+    font-size: 20px;
+  }
+}
+
+/* Sección bienvenida */
+.bienvenida {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.bienvenida h1 {
+  font-size: 32px;
+  font-weight: 700;
+  background: #1b3a57;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 15px 0;
+  line-height: 1.2;
+}
+
+.bienvenida p {
+  font-size: 18px;
+  color:#444;
+  margin: 0 auto;
+  line-height: 1.6;
+  max-width: 800px;
+}
+.estadisticas-main{
+    background-color: #ffffff; 
+    
+  padding-bottom: 1.5rem; 
+}

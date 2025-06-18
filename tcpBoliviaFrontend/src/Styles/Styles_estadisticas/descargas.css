@@ -1,0 +1,28 @@
+
+
+/* Estilo para el contenedor principal */
+.contenedor-dinamico-cuadro {
+    position: relative; /* Establece el contenedor como relativo para posicionar sus hijos de forma absoluta */
+  }
+ 
+  
+  /* Estilo para el contenedor de descargas */
+  .descargas {
+    position: absolute; /* Posiciona el componente de descargas de forma absoluta dentro del contenedor relativo */
+    top: 180px; /* Espacio desde el borde superior */
+    right: 70px; /* Espacio desde el borde derecho */
+    display: flex;
+    gap: 15px; /* Espacio entre los íconos */
+    z-index: 10; /* Asegúrate de que el componente de descargas esté por encima de otros contenidos */
+  }
+  .descargas i {
+    font-size: 25px; /* Tamaño de los íconos */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+    color:#6c757d; /* Color de los íconos */
+    transition: color 0.3s; /* Transición para el color al pasar el ratón */
+  }
+  
+  .descargas i:hover {
+    color: #17a2b8; /* Color de los íconos al pasar el ratón */
+  }
+  

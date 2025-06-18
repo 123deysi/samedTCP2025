@@ -1,0 +1,76 @@
+/* FormularioDatos.css */
+
+/* Contenedor principal del formulario */
+.formulario-container {
+    background-color: #f4f4f4; /* Color de fondo más claro para contrastar con el sidebar oscuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 260px; /* Ajusta según el ancho del sidebar */
+  }
+  
+  /* Títulos del formulario */
+  .formulario-title {
+    color: #561427; /* Color del texto del título, que debe combinar con el fondo del sidebar */
+    margin-bottom: 20px;
+  }
+  
+  /* Botones del formulario */
+  .formulario-button {
+    background-color: #561427; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+  }
+  .formulario-button:hover {
+    background-color: #722f46; /* Color de fondo del botón al pasar el cursor */
+  }
+  
+  /* Campos del formulario */
+  .MuiTextField-root {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  /* Personalizar los campos de entrada */
+  .MuiInputBase-root {
+    color: #561427; /* Color del texto en los campos */
+  }
+  
+  .MuiInputBase-input {
+    color: #561427; /* Color del texto en los campos de entrada */
+  }
+  
+  /* InputLabel */
+  .MuiInputLabel-root {
+    color: #561427; /* Color de las etiquetas de los campos */
+  }
+  
+  /* Selects */
+  .MuiSelect-root {
+    color: #561427; /* Color del texto en los selects */
+  }
+  
+  /* Personalizar el borde de los campos al enfocarse */
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #722f46; /* Color del borde del campo de entrada al enfocarse */
+  }
+  
+  /* Personalizar la etiqueta al enfocarse */
+  .MuiInputLabel-root.Mui-focused {
+    color: #722f46; /* Color de la etiqueta al enfocarse */
+  }
+  
+  /* DatePicker */
+  .MuiInputBase-input[type="date"] {
+    color: #561427; /* Color del texto en los campos de fecha */
+  }
+  
+  /* Añadir espacio y estilo a los contenedores internos */
+  .MuiFormControl-root {
+    margin-bottom: 16px;
+  }
+  
+  /* Ajustar colores de los iconos y otras partes del formulario */
+  .MuiInputAdornment-root .MuiSvgIcon-root {
+    color: #722f46; /* Color de los iconos */
+  }
+  

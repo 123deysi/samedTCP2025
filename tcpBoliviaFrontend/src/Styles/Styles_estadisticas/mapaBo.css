@@ -1,0 +1,349 @@
+/* Contenedor del mapa */
+.mapa-container {
+  width: 100%;
+  height: 700px; /* Ajusta el tamaño según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color:#F4F4F4;/* Fondo gris claro para resaltar el mapa */
+  border-radius: 8px; /* Bordes redondeados para un look más moderno */
+  margin-top: 10px;
+  overflow: hidden; /* Asegura que el contenido no sobresalga del contenedor */
+}
+
+/* Estilo del SVG */
+#svg_bolivia {
+  width: 100%;
+  height: 100%;
+  display: block; /* Elimina el espacio en blanco alrededor del SVG */
+  padding-top: 15;
+  padding-left: 100px;
+  padding-right: 0px
+}
+
+/* Estilo para las rutas dentro del SVG */
+#features path {
+  fill: #d0d0d0; /* Color base más claro */
+  stroke: #ffffff; /* Borde blanco para un mejor contraste */
+  stroke-width: 1; /* Grosor del borde */
+  transition: fill 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+#features path:not(.activo):hover {
+  fill: #4CAF50; /* Color verde más oscuro al pasar el ratón */
+}
+
+#features path.activo {
+  fill: #81C784; /* Color verde claro para áreas activas */
+}
+
+/* Escala general para el contenido del mapa */
+g#features {
+  transform: scale(1); /* Ajusta la escala si es necesario */
+}
+
+/* Estilo para las estadísticas */
+.stat-label {
+  font-size: 45px; /* Ajusta el tamaño del texto según sea necesario */
+  fill: #fcf9f9; /* Color del texto, más oscuro para mejor contraste */
+  /*font-weight: bold; /* Peso de la fuente para destacar */
+  text-anchor: middle; /* Alineación horizontal del texto */
+}
+
+/* Estilo para el tooltip */
+.tooltip {
+  position: absolute;
+  background-color: #ffffff; /* Fondo blanco para el tooltip */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 15px; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra sutil para profundidad */
+  z-index: 10;
+  max-width: 300px; /* Ancho máximo del tooltip */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+.tooltip h3 {
+  margin: 0;
+  font-size: 16px; /* Tamaño de fuente para el título */
+  color: #333; /* Color oscuro para el título */
+  font-weight: bold;
+}
+
+.tooltip p {
+  margin: 5px 0 0;
+  color: #666; /* Color gris para el contenido */
+}
+
+/* styles.css */
+.select-departamento {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+
+/**.chart-container {
+  display: flex;
+  max-width: 900px;
+  height: 400px;
+  flex-direction: column;         
+  justify-content: center;        
+  align-items: center;
+  height: 70vh;                   
+  width: 100%;                                
+  padding: 20px; 
+                 
+} **/
+ .chart-container{
+width: 100%;           /* Ancho del contenedor */
+     /* Ancho máximo para evitar que crezca demasiado */
+height: 500px;          /* Ajusta la altura automáticamente */
+     /* Espaciado interno para mayor claridad */
+overflow: auto;        /* Agrega scroll si la gráfica es muy grande */
+background-color: #fff; /* Fondo blanco para visibilidad */
+border: 1px solid #ddd; /* Borde para demarcar el contenedor */
+border-radius: 8px;     /* Bordes redondeados */
+padding: 30px;
+padding-right: 70px;
+padding-left: 70px;
+}
+
+.chart-container canvas {
+  max-width: 100% !important;
+  max-height: 400px !important;
+  width: 100% !important;
+  /* height:auto !important; */
+  /* height: 400px !important;  NO PUEDES PONERLE ESE TAMAÑO POR QUE ALTERA EL CONTENEDOR */
+ 
+}
+
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.fondo_Dinamica {
+  padding: 20px;
+}
+
+.letra {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contenedor_principal {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
+.contenedor-dinamico-cuadro {
+  display: flex;                /* Usar flexbox en el contenedor */
+  justify-content: center;      /* Centrar el contenedor del gráfico */
+  margin:  0;              /* Espaciado arriba y abajo */
+}
+
+.filtro-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#GraficoDatos{
+  border-radius: 4px;
+  margin: 5px;
+  padding:10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#GraficoDatos2{
+  border-radius: 4px;
+  margin: 5px;
+  padding:10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#TablaDatos{
+  border-radius: 4px;
+  margin: 5px;
+  padding:10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-description {
+  width: 80vw;                  /* Ajusta el ancho del contenedor */
+  max-width: 600px;             /* Añade un ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
+  margin: 0 auto;               /* Centra el contenedor horizontalmente */
+  padding: 20px;
+  text-align: left;             /* Alinea el texto a la izquierda */
+  font-size: 1rem;
+}
+
+
+
+
+/* ESTILOS PARA LA TABLA */
+/* ESTILOS PARA LA TABLA */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff; /* Fondo blanco para la tabla */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para un efecto de profundidad */
+  border-radius: 8px; /* Bordes redondeados para un estilo moderno */
+  overflow: hidden; /* Asegura que los bordes redondeados sean visibles */
+}
+
+/* Encabezado de la tabla */
+.data-table thead {
+  background-color: #bdc7d1; /* Fondo oscuro para el encabezado */
+  color: #ffffff; /* Color blanco para el texto */
+  font-weight: bold;
+  text-transform: uppercase; /* Transformar texto a mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo para las celdas */
+.data-table th, .data-table td {
+  padding: 12px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ecf0f1; /* Borde suave para separación */
+  font-size: 14px; /* Tamaño de fuente más pequeño para una mejor legibilidad */
+  color: #070707; /* Color de texto más oscuro para mejorar la legibilidad */
+}
+
+/* Estilo para las filas */
+.data-table tr:nth-child(even) {
+  background-color: #f7f7f7; /* Alternar color de fondo para filas pares */
+}
+
+.data-table tr:hover {
+  background-color: #f1f1f1; /* Efecto hover para resaltar filas */
+}
+
+/* Estilo para la fila de total */
+.total-row td {
+  font-weight: bold;
+  background-color: #eaf2f8; /* Fondo más claro para la fila de total */
+  color: #2c3e50;
+}
+
+.total-row td strong {
+  font-size: 1.2em; /* Aumentar tamaño para destacar el total */
+}
+
+/* Bordes y espaciado general */
+.data-table th, .data-table td {
+  border-left: 1px solid #ecf0f1;
+}
+
+.data-table td:first-child, .data-table th:first-child {
+  border-left: none;
+}
+
+/* Estilo de la última fila */
+.data-table tr:last-child td {
+  border-bottom: none; /* Eliminar el borde inferior en la última fila */
+}
+
+/* Estilo para las celdas con bordes redondeados (opcional) */
+.data-table th:first-child, .data-table td:first-child {
+  border-radius: 8px 0 0 8px; /* Bordes redondeados solo en la primera columna */
+}
+
+.data-table th:last-child, .data-table td:last-child {
+  border-radius: 0 8px 8px 0; /* Bordes redondeados solo en la última columna */
+}
+
+/*HASTA AQUI CSS DE TABLAS*/
+
+
+
+
+/* Estilo para la clase de error */
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  background-color: rgba(255, 0, 0, 0.1); /* Fondo suave para mensajes de error */
+  border: 1px solid red; /* Borde rojo */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo de botón activo en la vista de gráfico */
+.view-toggle button.active {
+  background-color: #007BFF; /* Color de fondo activo */
+  color: white; /* Color de texto activo */
+}
+
+
+
+
+
+/* Botón de selección de departamento */
+.select-departamento {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #007BFF; /* Borde azul */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #f9f9f9;
+  transition: border-color 0.3s; /* Transición suave al cambiar el borde */
+}
+
+.select-departamento:focus {
+  border-color: #0056b3; /* Color de borde al enfocar */
+  outline: none; /* Elimina el contorno predeterminado */
+}
+
+.download-button {
+  display: flex;
+ /* position: absolute; /* Posiciona el botón de manera absoluta dentro del contenedor */
+  top: 10px;          /* Ajusta el espacio desde la parte superior */
+  right: 10px;        /* Ajusta el espacio desde el lado derecho */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Color principal */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #45a049; /* Color al pasar el cursor */
+}
+
+.download-button svg {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}

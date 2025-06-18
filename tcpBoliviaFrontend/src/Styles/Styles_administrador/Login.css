@@ -1,0 +1,168 @@
+/* Estilos de degradado personalizado */
+.bg-gradient-custom {
+  background: linear-gradient(to right, rgb(117, 37, 59), rgb(181, 129, 129));
+}
+
+.bg-gradient-custom1 {
+  background: linear-gradient(to right, rgb(117, 37, 59), rgb(181, 129, 129));
+  color: rgb(255, 255, 255);
+}
+
+.bg-gradient-custom1:hover {
+  background: linear-gradient(135deg, rgb(181, 129, 129), rgb(117, 37, 59));
+  color: rgb(255, 255, 255);
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+}
+
+.login-card {
+  display: flex;
+  width: 95%;
+  max-width: 1000px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-left {
+  width: 50%;
+  padding: 40px;
+  background: linear-gradient(to right, rgb(117, 37, 59), rgb(181, 129, 129));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo {
+  width: 120px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login-description {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-right {
+  width: 50%;
+  padding: 40px;
+}
+
+.login-header {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+}
+
+.login-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 8px 4px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  transition: border-bottom-color 0.3s ease-in-out;
+}
+
+.form-input:focus {
+  border-bottom-color: #7b1f1f;
+}
+
+.form-button {
+  background: linear-gradient(to right, rgb(117, 37, 59), rgb(181, 129, 129));
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-button:hover {
+  background: linear-gradient(135deg, rgb(181, 129, 129), rgb(117, 37, 59));
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-left, .login-right {
+    width: 100%;
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-top: 20px;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 4px 6px;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+}
+
+.form-floating-label {
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  font-size: 16px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus+.form-floating-label,
+.form-input.filled+.form-floating-label {
+  top: -8px;
+  font-size: 12px;
+  color: #7b1f1f;
+}
