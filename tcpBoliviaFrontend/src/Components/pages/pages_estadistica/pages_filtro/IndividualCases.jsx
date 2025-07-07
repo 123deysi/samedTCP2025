@@ -18,7 +18,12 @@ import "../../../../Styles/Styles_estadisticas/casosIndividuales.css"
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 
+
+
+import { URL_API } from "../../../../Services/EndPoint";
 const IndividualCases = () => {
+  
+
   const [showFilters, setShowFilters] = useState(true);
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
   const [chartOptions, setChartOptions] = useState({});
@@ -129,9 +134,10 @@ const IndividualCases = () => {
   //  Obtener lista de departamentos
   const fetchDepartamentos = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8000/api/departamentos"
-      );
+      
+const response = await axios.get(`${URL_API}departamentos`);
+console.log("API base URL:", response.data);
+
       setDepartamentos(response.data);
     } catch (error) {
       console.error("Error al obtener departamentos:", error);
@@ -141,8 +147,7 @@ const IndividualCases = () => {
   //  Obtener lista de municipios
   const fetchMunicipios = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/municipios"
+      const response = await axios.get(`${URL_API}estadisticas/municipios`
       );
       const municipiosData = response.data;
 
@@ -172,7 +177,7 @@ const IndividualCases = () => {
   const fetchAniosDisponibles = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-anio"
+        `${URL_API}estadisticas/casos/por-anio`
       );
       const aniosUnicos = [...new Set(response.data.map((item) => item.anio))];
       setAnios(aniosUnicos);
@@ -187,7 +192,7 @@ const IndividualCases = () => {
     try {
       const params = department ? { departamentos_id: department } : {};
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-departamento",
+        `${URL_API}estadisticas/casos/por-departamento`,
         { params }
       );
       const formattedData = formatChartData(response.data, "departamento");
@@ -220,7 +225,7 @@ const IndividualCases = () => {
       if (departamento) params.departamento_id = departamento;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-departamento-municipio",
+        `${URL_API}estadisticas/casos/por-departamento-municipio`,
         { params }
       );
 
@@ -274,7 +279,7 @@ const IndividualCases = () => {
       if (mes) params.mes = mes;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-anio",
+        `${URL_API}estadisticas/casos/por-anio`,
         { params }
       );
 
@@ -392,7 +397,7 @@ const IndividualCases = () => {
   const fetchResEmisores = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-res-emisor"
+        `${URL_API}estadisticas/casos/por-res-emisor`
       );
       setResEmisores(response.data);
     } catch (error) {
@@ -419,7 +424,7 @@ const IndividualCases = () => {
     try {
       const params = resEmisor ? { res_emisor_id: resEmisor } : {};
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-res-emisor",
+        `${URL_API}estadisticas/casos/por-res-emisor`,
         { params }
       );
 
@@ -464,7 +469,7 @@ const IndividualCases = () => {
       }
 
       const response = await axios.get(
-        `http://localhost:8000/api/estadisticas/casos/por-subtipo-accion?accion_const_id=${accionConstitucionalId}`
+        `${URL_API}estadisticas/casos/por-subtipo-accion?accion_const_id=${accionConstitucionalId}`
       );
 
       if (!response.data || !Array.isArray(response.data.data)) {
@@ -506,7 +511,7 @@ const IndividualCases = () => {
       if (accionConstitucional) params.accion_const_id = accionConstitucional;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-subtipo-accion",
+        `${URL_API}estadisticas/casos/por-subtipo-accion`,
         { params }
       );
 
@@ -561,7 +566,7 @@ const IndividualCases = () => {
   const fetchAccionesConstitucionales = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/acciones-constitucionales"
+        `${URL_API}estadisticas/acciones-constitucionales`
       );
       setAccionesConstitucionales(response.data);
     } catch (error) {
@@ -580,7 +585,7 @@ const IndividualCases = () => {
         : {};
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/casos/por-accion-constitucional",
+      `${URL_API}estadisticas/casos/por-accion-constitucional`,
         { params }
       );
 

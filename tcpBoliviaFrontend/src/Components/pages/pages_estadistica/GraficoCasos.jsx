@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactECharts from 'echarts-for-react';
 
+import { Import } from 'lucide-react';
+import { URL_API } from '../../../Services/EndPoint';
 const GraficoCasos = () => {
   const [datosFiltrados, setDatosFiltrados] = useState([]);
   const [anioMin, setAnioMin] = useState(null);
@@ -11,8 +13,8 @@ const GraficoCasos = () => {
     const obtenerDatos = async () => {
       try {
         const [casosResponse, resolucionesResponse] = await Promise.all([
-          axios.get('http://localhost:8000/api/casosPorAnio'),
-          axios.get('http://localhost:8000/api/resolucionesPorAnio')
+          axios.get(`${URL_API}casosPorAnio`),
+          axios.get(`${URL_API}resolucionesPorAnio`)
         ]);
 
         const casosData = casosResponse.data;

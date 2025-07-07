@@ -18,6 +18,8 @@ import {
   CheckCircle as CheckCircleIcon
 } from '@mui/icons-material';
 
+import { URL_API } from '../../../Services/EndPoint';
+
 const FormularioExcel = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileData, setFileData] = useState([]);
@@ -194,7 +196,7 @@ const FormularioExcel = () => {
     formData.append('file', selectedFile);
   
     try {
-      const response = await axios.post('http://localhost:8000/api/upload', formData, {
+      const response = await axios.post(`${URL_API}upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`,

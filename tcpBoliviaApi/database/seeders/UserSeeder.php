@@ -14,24 +14,28 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {        
-        // Asegúrate de que los roles existan o créalos si no existen
-        $adminRole = Role::firstOrCreate(['role' => 'Administrador']);
-        $userRole = Role::firstOrCreate(['role' => 'Auxiliar']);
+   public function run()
+{
+    $adminRole = Role::firstOrCreate(['role' => 'Administrador']);
+    $userRole = Role::firstOrCreate(['role' => 'Auxiliar']);
 
-        
-        User::create([
+    User::firstOrCreate(
+        ['email' => 'deysi@gmail.com'],
+        [
             'name' => 'Deysi',
-            'email' => 'deysi@gmail.com',
             'password' => Hash::make('deysi123'),
             'role_id' => $adminRole->id,
-        ]);
-        User::create([
+        ]
+    );
+
+    User::firstOrCreate(
+        ['email' => 'danna@gmail.com'],
+        [
             'name' => 'Danna',
-            'email' => 'danna@gmail.com',
             'password' => Hash::make('danna123'),
             'role_id' => $userRole->id,
-        ]);
-    }
+        ]
+    );
+}
+
 }

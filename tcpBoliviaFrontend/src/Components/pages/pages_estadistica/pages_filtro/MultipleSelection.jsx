@@ -16,7 +16,7 @@ import { Button } from "@mui/material";
 
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
-
+import { URL_API } from "../../../../Services/EndPoint";
 const MultipleSelection = () => {
   const [showFilters, setShowFilters] = useState(true);
   const [alignment, setAlignment] = useState("bar");
@@ -101,7 +101,7 @@ const MultipleSelection = () => {
       setChartOptions(null);
 
       const response = await axios.get(
-        "http://localhost:8000/api/multiples/casos/estadisticas",
+        `${URL_API}multiples/casos/estadisticas`,
         { params }
       );
 
@@ -448,7 +448,7 @@ const MultipleSelection = () => {
       });
 
       const response = await axios.get(
-        "http://localhost:8000/api/multiples/resoluciones/estadisticas",
+        `${URL_API}multiples/resoluciones/estadisticas`,
         { params }
       );
 

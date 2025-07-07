@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { TrendingUp } from 'lucide-react';
 import "../../../Styles/Styles_estadisticas/estadisticas.css";
+import { URL_API } from '../../../Services/EndPoint';
 const Estadisticas = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ const Estadisticas = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/contar/casos/resoluciones');
+        const response = await axios.get(`${URL_API}contar/casos/resoluciones`);
         setData(response.data);
       } catch (err) {
         setError(err.message);

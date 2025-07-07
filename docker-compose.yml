@@ -1,14 +1,15 @@
 
+
 services:
   mysql:
     image: mysql:8
     container_name: mysql
-    restart: always 
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD:${DB_PASSWORD}
-      MYSQL_DATABASE:${DB_DATABASE}
-      MYSQL_USER:${DB_USERNAME}
-      MYSQL_PASSWORD:${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+     
+      
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
@@ -18,6 +19,8 @@ services:
     build:
       context: ./tcpBoliviaApi
     container_name: backend
+    ports:
+      - "8000:8000"
     volumes:
       - ./tcpBoliviaApi:/var/www/html
       - ./tcpBoliviaApi/docker/php-conf/custom.ini:/usr/local/etc/php/conf.d/custom.ini
@@ -25,13 +28,14 @@ services:
     depends_on:
       - mysql
     environment:
-      DB_CONNECTION:${DB_CONNECTION}
-      DB_HOST:${DB_HOST}
-      DB_PORT:${DB_PORT}
-      DB_DATABASE:${DB_DATABASE}
-      DB_USERNAME:${DB_USERNAME}
-      DB_PASSWORD:${DB_PASSWORD}
-    command: php artisan serve --host=0.0.0.0 --port=8000
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    command: /bin/sh -c "until php artisan migrate --seed; do echo 'Esperando a MySQL...'; sleep 5; done && php artisan serve --host=0.0.0.0 --port=8000"
+
     networks:
       - samed-tcp
 
@@ -39,15 +43,17 @@ services:
     build:
       context: ./tcpBoliviaFrontend
     container_name: frontend
-    expose:
-    - "3000"
+    ports:
+      - "3000:3000"
     volumes:
-    - ./tcpBoliviaFrontend:/app
-    - /app/node_modules
+      - ./tcpBoliviaFrontend:/app
+      - /app/node_modules
     working_dir: /app
     environment:
-      - CHOKIDAR_USEPOLLING=true
-    command: npm start
+      CHOKIDAR_USEPOLLING: true
+      REACT_APP_SECRET_NAME: ${REACT_APP_SECRET_NAME}
+      REACT_APP_BACKEND: ${REACT_APP_BACKEND}
+    command: /bin/sh -c "npm run build && npx serve -s build -l 3000"
     depends_on:
       - backend
     networks:

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../Styles/Styles_administrador/Login.css';
 
+import { URL_API } from '../../Services/EndPoint';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/login',
+        `${URL_API}login`,
         { email, password },
         {
           withCredentials: true,

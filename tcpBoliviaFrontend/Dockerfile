@@ -1,17 +1,26 @@
+# Usa una imagen ligera de Node
 FROM node:18
 
-# Establece el directorio de trabajo
+# Establece directorio de trabajo
 WORKDIR /app
 
-# Copia y asegura instalación estable si hay package-lock.json
+# Copia archivos de dependencias
 COPY package*.json ./
-RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
-# Copia el resto de la app
+# Instala dependencias
+RUN npm install
+
+# Instala "serve" para servir archivos estáticos
+RUN npm install -g serve
+
+# Copia el resto del proyecto
 COPY . .
 
-# Expone el puerto de desarrollo de React
+# Construye la aplicación para producción
+RUN npm run build
+
+# Expone el puerto en el que se sirve la app
 EXPOSE 3000
 
-# Comando para arrancar la app
-CMD ["npm", "start"]
+# Usa "serve" para mostrar la app desde el directorio de build
+CMD ["serve", "-s", "build", "-l", "3000"]

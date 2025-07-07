@@ -124,7 +124,7 @@ const Dashboard = () => {
           });
         })
         .catch(err => {
-          Swal.fire({
+          Swal.fire({ 
             icon: 'error',
             title: 'Error al actualizar',
             text: err.response?.data?.message || err.message,

@@ -4,6 +4,7 @@ import ReactECharts from "echarts-for-react";
 import { registerMap } from "echarts/core";
 import { geoMercator } from "d3-geo";
 import axios from "axios";
+import { URL_API } from "../../../Services/EndPoint";
 
 const EChart = () => {
   const [departamentos, setDepartamentos] = useState([]);
@@ -16,7 +17,7 @@ const EChart = () => {
   // Obtener datos por departamento
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/resoluciones/departamento');
+      const response = await axios.get(`${URL_API}resoluciones/departamento`);
       setDepartamentos(response.data);
     } catch (error) {
       console.error("Error al obtener los datos de departamentos:", error);
@@ -26,7 +27,7 @@ const EChart = () => {
   // Obtener años disponibles
   const fetchAnios = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/resolucionesPorAnio');
+      const response = await axios.get(`${URL_APIs}resolucionesPorAnio`);
       const anios = response.data.map(item => item.anio);
       if (anios.length > 0) {
         setAnioMin(Math.min(...anios));

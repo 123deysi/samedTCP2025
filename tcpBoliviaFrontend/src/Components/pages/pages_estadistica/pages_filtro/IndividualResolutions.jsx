@@ -14,6 +14,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
+import { URL_API } from "../../../../Services/EndPoint";
 
 const IndividualResolutions = () => {
   const [showFilters, setShowFilters] = useState(true);
@@ -224,7 +225,7 @@ const IndividualResolutions = () => {
   const fetchAniosDisponibles = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-fecha"
+        `${URL_API}estadisticas/resoluciones/por-fecha`
       );
       const aniosUnicos = [...new Set(response.data.map((item) => item.anio))];
       setAnios(aniosUnicos);
@@ -241,7 +242,7 @@ const IndividualResolutions = () => {
       if (mes) params.mes = mes;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-fecha",
+        `${URL_API}estadisticas/resoluciones/por-fecha`,
         { params }
       );
 
@@ -304,7 +305,7 @@ const IndividualResolutions = () => {
   const fetchTiposResoluciones = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/tipos-resoluciones"
+        `${URL_API}estadisticas/tipos-resoluciones`
       );
 
       setTiposResoluciones(response.data);
@@ -326,7 +327,7 @@ const IndividualResolutions = () => {
       if (tipoResolucionId) params.tipo_resolucion = tipoResolucionId;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-tipo",
+        `${URL_API}estadisticas/resoluciones/por-tipo`,
         { params }
       );
 
@@ -353,7 +354,7 @@ const IndividualResolutions = () => {
   const fetchSubTiposResoluciones = async (tipoResolucionId) => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/subtipos-resoluciones"
+        `${URL_API}estadisticas/subtipos-resoluciones`
       );
       const subtiposFiltrados = response.data.filter(
         (subtipo) => subtipo.res_tipo2_id === parseInt(tipoResolucionId)
@@ -380,7 +381,7 @@ const IndividualResolutions = () => {
       if (subTipoResolucion) params.sub_tipo_resolucion = subTipoResolucion;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-subtipo",
+        `${URL_API}estadisticas/resoluciones/por-subtipo`,
         { params }
       );
 
@@ -402,7 +403,7 @@ const IndividualResolutions = () => {
   const fetchFondosVoto = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-fondo-voto"
+        `${URL_API}estadisticas/resoluciones/lista-fondo-voto`
       );
 
       // Mapeo de valores de fondo voto
@@ -436,7 +437,7 @@ const IndividualResolutions = () => {
       if (fondoVoto) params.res_fondo_voto = fondoVoto;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-fondo-voto",
+      `${URL_API}estadisticas/resoluciones/por-fondo-voto`,
         { params }
       );
 
@@ -471,7 +472,7 @@ const IndividualResolutions = () => {
   const fetchResResulList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-resresul"
+        `${URL_API}estadisticas/resoluciones/lista-resresul`
       );
       setResResulList(response.data);
     } catch (error) {
@@ -492,7 +493,7 @@ const IndividualResolutions = () => {
       if (resResul) params.resresul = resResul;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-resresul",
+        `${URL_API}estadisticas/resoluciones/por-resresul`,
         { params }
       );
 
@@ -520,7 +521,7 @@ const IndividualResolutions = () => {
   const fetchRevResulList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-revresul"
+        `${URL_API}estadisticas/resoluciones/lista-revresul`
       );
 
       // Mapeo de valores de revresul
@@ -556,7 +557,7 @@ const IndividualResolutions = () => {
       if (revResul) params.revresul = revResul;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-revresul",
+        `${URL_API}estadisticas/resoluciones/por-revresul`,
         { params }
       );
 
@@ -589,7 +590,7 @@ const IndividualResolutions = () => {
   const fetchResFinalList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-resfinal"
+        `${URL_API}estadisticas/resoluciones/lista-resfinal`
       );
 
       // Mapeo de valores de resfinal con descripciones
@@ -625,7 +626,7 @@ const IndividualResolutions = () => {
       if (resFinal) params.resfinal = resFinal;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-resfinal",
+        `${URL_API}estadisticas/resoluciones/por-resfinal`,
         { params }
       );
 
@@ -658,7 +659,7 @@ const IndividualResolutions = () => {
   const fetchResTiempoList = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-restiempo"
+        `${URL_API}estadisticas/resoluciones/lista-restiempo`
       );
       setResTiempoList(response.data);
     } catch (error) {
@@ -679,7 +680,7 @@ const IndividualResolutions = () => {
       if (resTiempo) params.restiempo = resTiempo;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-restiempo",
+        `${URL_API}estadisticas/resoluciones/por-restiempo`,
         { params }
       );
 
@@ -703,7 +704,7 @@ const IndividualResolutions = () => {
   const fetchRelatores = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-relatores"
+        `${URL_API}estadisticas/resoluciones/lista-relatores`
       );
       setRelatores(response.data);
     } catch (error) {
@@ -724,7 +725,7 @@ const IndividualResolutions = () => {
       if (relator) params.relator = relator;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-relator",
+        `${URL_API}estadisticas/resoluciones/por-relator`,
         { params }
       );
 
@@ -746,7 +747,7 @@ const IndividualResolutions = () => {
   const fetchDepartamentos = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-departamentos"
+        `${URL_API}estadisticas/resoluciones/lista-departamentos`
       );
       setDepartamentos(response.data);
     } catch (error) {
@@ -757,7 +758,7 @@ const IndividualResolutions = () => {
   const fetchMunicipiosTodos = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/lista-municipios-todos"
+        `${URL_API}estadisticas/resoluciones/lista-municipios-todos`
       );
       setMunicipios(response.data);
     } catch (error) {
@@ -772,7 +773,7 @@ const IndividualResolutions = () => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/estadisticas/resoluciones/lista-municipios/${departamentoId}`
+        `${URL_API}estadisticas/resoluciones/lista-municipios/${departamentoId}`
       );
       setMunicipios(response.data);
     } catch (error) {
@@ -795,7 +796,7 @@ const IndividualResolutions = () => {
       if (municipio) params.municipio_id = municipio;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-departamento",
+        `${URL_API}estadisticas/resoluciones/por-departamento`,
         { params }
       );
 
@@ -824,7 +825,7 @@ const IndividualResolutions = () => {
   const fetchAccionesConstitucionales = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/acciones-constitucionales"
+        `${URL_API}estadisticas/resoluciones/acciones-constitucionales`
       );
       setAccionesConstitucionales(response.data);
     } catch (error) {
@@ -845,7 +846,7 @@ const IndividualResolutions = () => {
       if (accion) params.accion_const_id = accion;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-accion-constitucional",
+        `${URL_API}estadisticas/resoluciones/por-accion-constitucional`,
         { params }
       );
 
@@ -871,7 +872,7 @@ const IndividualResolutions = () => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/estadisticas/resoluciones/subtipos-acciones/${accionId}`
+        `${URL_API}estadisticas/resoluciones/subtipos-acciones/${accionId}`
       );
       setSubtiposAcciones(response.data);
     } catch (error) {
@@ -894,7 +895,7 @@ const IndividualResolutions = () => {
       if (subtipo) params.subtipo_accion_id = subtipo;
 
       const response = await axios.get(
-        "http://localhost:8000/api/estadisticas/resoluciones/por-subtipo-accion",
+        `${URL_API}estadisticas/resoluciones/por-subtipo-accion`,
         { params }
       );
 
